@@ -1,0 +1,856 @@
+/* Photography Portfolio CSS */
+
+/* Color Palette */
+:root {
+    --light-sage: #D9DFC6; /* First color in palette */
+    --pale-sage: #EFF3EA; /* Second color in palette */
+    --cream: #FFFDF0; /* Third color in palette */
+    --pale-yellow: #F1E5D1; /* Fourth color in palette */
+    --text-color: #333333;
+    --accent-color: #A64B2A;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: var(--text-color);
+    background-color: var(--cream);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/******************** Font **************************/
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-family: 'Lora', serif;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Main title (hero title) - using Bodoni */
+.hero-title {
+    font-family: 'Bodoni Moda', serif;
+    font-weight: 700;
+    font-size: 4.5rem;
+}
+
+/* All other headings - using Lora */
+h2, h3, h4, h5, h6 {
+    font-family: 'Lora', serif;
+} 
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    padding: 5rem 0;
+}
+
+.cite-font {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+}
+
+.cite-font-big {
+    font-family: 'Playfair Display', serif;
+    font-size: 7rem;
+    text-align: center;
+    position: relative;
+    bottom: 30px;
+}
+
+.cite-font-lg {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    text-align: center;
+    position: relative;
+    bottom: 30px;
+}
+
+.cite-font-mid {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    text-align: center;
+    position: relative;
+    bottom: 70px;
+}
+
+.content-font {
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: justify;
+}
+
+.cursive-font {
+    font-family: 'Herr Von Muellerhoff', cursive;
+    font-size: 6rem;
+    text-align: center;
+    color: var(--accent-color);
+}
+
+.cursive-font-big {
+    font-family: 'Herr Von Muellerhoff', cursive;
+    font-size: 8rem;
+    text-align: center;
+    color: var(--accent-color);
+}
+
+/******************** Position **************************/
+.move-up {
+    position: relative;
+    bottom: 60px;
+}
+
+.move-up-up {
+    position: relative;
+    bottom: 80px;
+}
+
+.move-up-lit {
+    position: relative;
+    bottom: 50px;
+}
+
+.hover-yellow:hover {
+    color: yellow;
+}
+
+/******************** Parallax effect **************************/
+.parallax {
+    /* The image used */
+    background-image: url("photos/hero.jpg");
+    /* Set a specific height */
+    min-height: 100vh;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Header Styling */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+/* This class will be added via JavaScript when scrolling down */
+.header-hidden {
+    transform: translateY(-100%);
+}
+
+/* Clean, minimal navbar style like in your screenshots */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--accent-color);
+}
+
+/* Hero Section with Background Image */
+.hero-section {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+    
+    /* Background image styling */
+    background-image: url('photos/Henry\ B\ plant\ Cover\ L.jpeg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Dark overlay to make text more readable */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Adjust opacity as needed */
+    z-index: 1;
+}
+
+/* Make sure text stays on top of the overlay */
+.hero-section .hero-title,
+.hero-section .hero-subtitle {
+    position: relative;
+    z-index: 2;
+    color: white; /* Change text color to white for better contrast */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for better readability */
+}
+
+.hero-subtitle {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    max-width: 800px;
+}
+
+/* Make it responsive */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+}
+/* About Section */
+.about-section {
+    background-color: var(--pale-yellow);
+    padding: 5rem 0;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Gallery Section */
+.gallery-section {
+    text-align: center;
+    padding: 5rem 0;
+}
+
+.gallery-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+
+/* Mixed Orientation Gallery Layout */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 250px;
+    grid-auto-flow: dense;
+    gap: 20px;
+    margin-bottom: 2rem;
+}
+
+/* Default photo item sizing */
+.photo-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    grid-row: span 1;
+}
+
+/* Make landscape photos span 1 row */
+.photo-item.landscape {
+    grid-column: span 1;
+}
+
+/* Make portrait photos taller (span 2 rows) */
+.photo-item.portrait {
+    grid-row: span 2;
+}
+
+/* For featured/highlight photos - optional */
+.photo-item.featured {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.photo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.photo-item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.photo-item:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* On mobile, don't let portraits be too tall */
+    .photo-item.portrait {
+        grid-row: span 1;
+    }
+    
+    /* Featured images aren't as large on mobile */
+    .photo-item.featured {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
+
+/* Photo Items */
+.photo-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 1.5rem;
+}
+
+.photo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.photo-item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.photo-item:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.05);
+}
+
+/* Remove magnifying glass icon */
+.photo-item a::before {
+    display: none;
+}
+
+/* Subtle overlay on hover */
+.photo-item a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.photo-item:hover a::after {
+    opacity: 1;
+}
+
+/* Height variations */
+.height-1 {
+    height: 200px;
+}
+
+.height-2 {
+    height: 250px;
+}
+
+.height-3 {
+    height: 300px;
+}
+
+/* Like Button - Pink by default */
+.photo-like-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 20px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 10;
+}
+
+.photo-like-btn:hover {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.photo-like-btn i {
+    color: #e83e8c; /* Pink color by default */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.photo-like-btn.liked i {
+    color: #ff1493; /* Deeper pink when liked */
+    transform: scale(1.2);
+}
+
+.photo-like-btn:hover i {
+    transform: scale(1.1);
+}
+
+/* Animation for hover effect */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.photo-like-btn.liked {
+    animation: pulse 0.5s;
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: var(--pale-sage);
+    padding: 5rem 0;
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-details {
+    margin-top: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.contact-item i {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+}
+
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Source Sans Pro', sans-serif;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.btn {
+    -webkit-border-radius: 8;
+    -moz-border-radius: 8;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 1rem;
+    background: var(--accent-color);
+    padding: 5px 15px 5px 15px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background: #E6B325;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* Form Messages */
+.form-message {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.success {
+    background-color: rgba(46, 204, 113, 0.1);
+    border: 1px solid #2ecc71;
+    color: #27ae60;
+}
+
+.error {
+    background-color: rgba(231, 76, 60, 0.1);
+    border: 1px solid #e74c3c;
+    color: #c0392b;
+}
+
+/* Footer */
+footer {
+    background-color: var(--light-sage);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--accent-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    z-index: 99;
+}
+
+.back-to-top:hover {
+    background-color: var(--light-sage);
+    color: var(--text-color);
+}
+
+/* Lightbox Customization */
+.lb-data .lb-caption {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.lb-nav a.lb-prev,
+.lb-nav a.lb-next {
+    opacity: 0.5;
+}
+
+.lb-nav a.lb-prev:hover,
+.lb-nav a.lb-next:hover {
+    opacity: 1;
+}
+
+/* Additional Styling */
+.align-center {
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Responsive Styles */
+@media screen and (min-width: 992px) {
+    .top-container,
+    .middle-container,
+    .bottom-container {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+@media (max-width: 992px) {
+    .six, .three {
+        width: 100%;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .about-text, .about-image {
+        flex: 100%;
+    }
+    
+    .about-image {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .logo {
+        margin-bottom: 1rem;
+    }
+    
+    .nav-links {
+        margin-bottom: 1rem;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    section {
+        padding: 3rem 0;
+    }
+    
+    h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .three {
+        width: calc(50% - 0.75rem);
+    }
+    
+    .six {
+        width: 100%;
+    }
+    
+    .height-1, .height-2, .height-3 {
+        height: 250px; /* Consistent height for tablets */
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar {
+        padding: 0.8rem;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .photo-item {
+        margin-bottom: 1rem;
+    }
+    
+    .height-1, .height-2, .height-3 {
+        height: 200px; /* Consistent height for mobile */
+    }
+    
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+    }
+}
