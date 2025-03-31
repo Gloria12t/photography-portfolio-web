@@ -178,7 +178,7 @@ header {
     transform: translateY(-100%);
 }
 
-/* Clean, minimal navbar style like in your screenshots */
+/*  minimal navbar style  */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -252,7 +252,7 @@ header {
     position: relative;
     
     /* Background image styling */
-    background-image: url('photos/Henry\ B\ plant\ Cover\ L.jpeg'); /* Replace with your image path */
+    background-image: url('photos/Henry\ B\ plant\ Cover\ L.jpeg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -266,17 +266,17 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Adjust opacity as needed */
+    background-color: rgba(0, 0, 0, 0.4); 
     z-index: 1;
 }
 
-/* Make sure text stays on top of the overlay */
+
 .hero-section .hero-title,
 .hero-section .hero-subtitle {
     position: relative;
     z-index: 2;
-    color: white; /* Change text color to white for better contrast */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for better readability */
+    color: white; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /*  text shadow for better readability */
 }
 
 .hero-subtitle {
@@ -286,7 +286,7 @@ header {
     max-width: 800px;
 }
 
-/* Make it responsive */
+/* responsive */
 @media (max-width: 768px) {
     .hero-title {
         font-size: 3.5rem;
@@ -370,12 +370,12 @@ header {
     grid-row: span 1;
 }
 
-/* Make landscape photos span 1 row */
+/*  landscape photos span 1 row */
 .photo-item.landscape {
     grid-column: span 1;
 }
 
-/* Make portrait photos taller (span 2 rows) */
+/*  portrait photos taller (span 2 rows) */
 .photo-item.portrait {
     grid-row: span 2;
 }
