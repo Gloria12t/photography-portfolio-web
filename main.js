@@ -3,16 +3,16 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM fully loaded');
     
-    // Initialize EmailJS - ADD YOUR USER ID HERE
+    // Initialize EmailJS 
     if (typeof emailjs !== 'undefined') {
-        emailjs.init("taktqDnu6srQX04wq"); // Replace with your actual EmailJS User ID
+        emailjs.init("taktqDnu6srQX04wq"); 
         console.log('EmailJS initialized');
     }
     
-    // ===== Header Auto-Hide on Scroll =====
+    
     let lastScrollTop = 0;
     const header = document.querySelector('header');
-    const scrollThreshold = 100; // Adjust this value as needed
+    const scrollThreshold = 100; 
     
     window.addEventListener('scroll', function() {
         let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
@@ -45,15 +45,15 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (targetElement) {
                 window.scrollTo({
-                    top: targetElement.offsetTop - 80, // Adjust for header height
+                    top: targetElement.offsetTop - 80, 
                     behavior: 'smooth'
                 });
             }
         });
     });
     
-    // ===== Initialize Lightbox =====
-    // Check if lightbox exists before trying to use it
+    
+    
     if (typeof lightbox !== 'undefined' && lightbox !== null) {
         try {
             lightbox.option({
@@ -70,14 +70,14 @@ document.addEventListener('DOMContentLoaded', function() {
         console.warn('Lightbox is not defined');
     }
     
-    // ===== Gallery Functionality: Like Buttons =====
+    // Gallery Functionality: Like Buttons 
     // Initialize variables
     const photoItems = document.querySelectorAll('.photo-item');
     
-    // Initialize like buttons right away
+   
     initializeLikeButtons();
     
-    // ===== Contact Form Handling with EmailJS =====
+    // Contact Form Handling with EmailJS 
     const contactForm = document.getElementById('contactForm');
     const formSuccess = document.getElementById('formSuccess');
     const formError = document.getElementById('formError');
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         message: message
                     };
                     
-                    // ADD YOUR SERVICE ID AND TEMPLATE ID HERE
+                    
                     emailjs.send('service_4knk6nk', 'template_6tp06za', templateParams)
                         .then(function(response) {
                             console.log('Email sent successfully!', response);
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // ===== Back to Top Button =====
+    // Back to Top Button 
     const backToTopBtn = document.getElementById('back-to-top');
     
     if (backToTopBtn) {
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // New function to fetch all likes from server
+    //  function to fetch all likes from server
     async function fetchAllPhotoLikes() {
         try {
             console.log("Fetching photo likes from server");
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // New function to update a photo's like count
+    // function to update a photo's like count
     async function updatePhotoLike(photoId, increment) {
         try {
             console.log(`Updating photo ${photoId} likes by ${increment}`);
@@ -270,7 +270,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 button.classList.add('liked');
             }
             
-            // Remove existing event listeners by cloning and replacing the button
+            
             const newButton = button.cloneNode(true);
             button.parentNode.replaceChild(newButton, button);
             
